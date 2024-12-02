@@ -79,6 +79,5 @@ test:
 #
 production:
   <<: *default
-  database: gym_suplement_production
-  username: gym_suplement
-  password: <%= ENV["GYM_SUPLEMENT_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  pool: 5
