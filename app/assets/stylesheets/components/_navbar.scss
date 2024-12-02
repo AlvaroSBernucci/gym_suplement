@@ -18,9 +18,11 @@
   justify-content: space-between;
   width: 100%;
 }
+
 .dropdow {
   position: relative;
 }
+
 .div-dropdown {
   position: absolute;
   left: 0;
@@ -30,4 +32,8 @@
   .logo-img {
     width: 70px;
   }
+}
+
+.navbar-lewagon .d-flex.justify-content-center {
+  justify-content: center;
 }

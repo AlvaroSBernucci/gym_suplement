@@ -1,10 +1,10 @@
 <div class="checkout-container">
   <h1>Resumo da Compra</h1>
 
-  <div class="cart-summary">
-    <ul>
+  <div class="cart-summary p-4 cart-card ">
+    <ul class="row ">
       <% @cart.cart_items.each do |item| %>
-        <li class="cart-item">
+        <li class="cart-item col-md-6 col-sm-12 col-12 justify-content-center">
           <div class="product-details">
             <% if item.product.image.attached? %>
               <%= cl_image_tag item.product.image.key, width: 150 %>
@@ -28,7 +28,7 @@
       <% end %>
     </ul>
 
-    <h3><strong>Total Geral:</strong> R$ <%= @total_price %></h3>
+    <h3 class="fw-bold text-center">Total Geral: <span class="fw-normal">R$ <%= @total_price %></span></h3>
   </div>
 
   <%= form_with url: checkouts_path, method: :post do %>

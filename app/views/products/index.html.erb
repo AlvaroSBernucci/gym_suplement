@@ -1,4 +1,4 @@
-<div class="container-products container-new-form mt-3">
+<div class="container container-new-form mt-3">
   <%= form_with url: products_path, method: :get, class: "d-flex search-form" do %>
     <%= text_field_tag :query,
           params[:query],
@@ -7,9 +7,9 @@
       %>
     <%= submit_tag "Search", name: "", class: "btn btn-danger text-light" %>
   <% end %>
-  <div class="row row-product">
+  <ul class="row row-product">
     <% @products.each do |product| %>
-      <div class="col-md-6 col-sm-12 col-12 col-custom">
+      <li class="col-md-6 col-sm-12 col-12">
         <div class="product-card mt-4 p-2">
 
           <!-- Imagem do produto -->
@@ -43,7 +43,7 @@
                 <span>Stock: <%= product.stock %></span>
               </div>
             </div>
-            <div id="buttom-cards" class="d-flex align-items-center card-btn justify-content-between mt-4">
+            <div id="buttom-cards" class="d-flex align-items-center card-btn justify-content-between mt-4 w-100">
               <%= link_to "Ver Produto", product_path(product), class: "text-decoration-none text-light btn btn-danger rounded-4" %>
               <% if user_signed_in? %>
                 <%= button_to "Adicionar ao Carrinho", add_product_carts_path(cart_id: current_user.cart.id, product_id: product.id), method: :post, data: { turbo_stream: true }, class: "text-light btn btn-danger rounded-4" %>
@@ -53,7 +53,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </li>
     <% end %>
-  </div>
+  </ul>
 </div>
