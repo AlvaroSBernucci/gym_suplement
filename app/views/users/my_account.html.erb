@@ -1,7 +1,8 @@
 <div class="my-account-container">
   <div class="user-info text-center mt-3">
     <h1>Bem-vindo!</h1>
-    <%= image_tag "growth-logo-or.png", alt: "Minha Conta", class: "rounded-circle mt-5 mb-5" %>
+    <%= image_tag "user_2.svg", alt: "Minha Conta", class: "rounded-circle mt-5 mb-5", id: "user-img" %>
+
     <h6 class="fs-3 mb-3"><%= current_user.nome %> <%= current_user.sobrenome %></h6>
   </div>
   <div class="actions row gap-3 justify-content-center p-3 mt-3">
